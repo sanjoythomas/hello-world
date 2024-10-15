@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+To hide a div on mobile:
+ class="d-none d-md-block"
+
+
+To hide a div on desktop:
+ d-block d-md-none
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Doctor Landing Page </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Add Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+
+    <style>
+        /*  Styling for the top gray menu  */
+        /* Menu container styling */
+        .top_gray_menu {
+            align-items: center;
+            background-color: #e0e0e0;
+            /* Light grey background */
+        }
+
+        /* Menu container styling */
+        .top_gray_menu a {
+            text-decoration: none;
+            /* Remove underline */
+            color: #333;
+            /* Dark text color */
+            font-weight: bold;
+            /* Bold text */
+            font-size: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Hover effect */
+        a.top_gray_menu_nav_link:hover,
+        a:hover {
+            text-decoration: underline;
+            /* Add underline on hover */
+            color:rgb(6, 118, 216);
+            font-size: 1.05rem;
+            /* Change color on hover  */
+        }
+
+        .top_gray_menu td {
+            text-align: center;
+            vertical-align: middle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+ 
+
+        /*  Styling for the top blue menu  */
+        /* Menu container styling */
+        .top_blue_menu {
+            margin-top:3rem;
+            align-items: center;
+            background-color:rgb(6, 118, 216);
+            /* bluebackground */
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            /* Rounded corners */
+          
+            /* Rounded corners */
+        }
+
+        /* Menu container styling */
+        .top_blue_menu a {
+            text-decoration: none;
+            /* Remove underline */
+            color: white;
+            /* whitetext color */
+            font-weight: bold;
+            /* Bold text */
+            font-size: 1rem;
+            padding-right: 2rem;
+        }
+
+        /* Hover effect */
+        .top_blue_menu  a.top_blue_menu_nav_link:hover,
+        .top_blue_menu a:hover {
+            text-decoration: underline;
+            /* Add underline on hover */
+            color: white;
+            font-size: 1.05rem;
+            /* Change color on hover (Bootstrap's primary blue) */
+        }
+
+        .top_blue_menu td {
+            text-align: center;
+            vertical-align: middle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
+
+    <style>
+        .navbar-light {
+            background-color: #f8f9fa;
+        }
+
+
+        /* Custom styles for the menu */
+        .custom-nav {
+            background-color: white;
+            /* Blue color for the background */
+        }
+
+        .custom-nav .nav-link {
+            color: white;
+            /* White text color for the links */
+            font-weight: bold;
+        }
+
+        /* Hover effect */
+        .custom-nav .nav-link:hover {
+            background-color: white;
+            /* Change background to white */
+            color: #0056b3;
+            /* Change text color to hover blue */
+        }
+
+        /* ----- */
+
+        /* Default styles for larger screens (horizontal display) */
+        .custom-nav .nav-link {
+            background-color: white;
+            /* White background for horizontal display */
+            color: rgb(6, 118, 216);
+            /* Blue text color */
+            font-weight: bold;
+        }
+
+        .custom-nav .nav-link:hover {
+            background-color: #0056b3;
+            /* Blue background on hover */
+            color: white;
+            /* White text on hover */
+        }
+
+        /*-----------------------------------*/
+
+        /*  ------ */
+        /* Styles for smaller screens (collapsed menu with vertical display) */
+        @media (max-width: 991.98px) {
+            /* Bootstrap's breakpoint for navbar collapse */
+
+            .navbar-brand {
+                margin-left: auto;
+                /*  logo is centered when the menu is collapsed    */
+                margin-right: auto;
+            }
+
+            .navbar-nav {
+                background-color: rgb(6, 118, 216);
+                /* Blue background for vertical menu */
+            }
+
+            .custom-nav {
+                background-color: white;
+                /* Blue background for the navbar */
+            }
+
+            .custom-nav .nav-link {
+                background-color: rgb(6, 118, 216);
+                /* Blue background for vertical menu */
+                color: white;
+                /* White text color for vertical menu */
+
+                font-weight: bold;
+                border-radius: 5px;
+                /* Rounded corners */
+                margin: 0px;
+                /* Space between the menu items */
+                padding: 10px 20px;
+                /* Padding to make the items look like buttons */
+
+            }
+
+            .custom-nav .nav-link:hover {
+                background-color: white;
+                /* White background on hover */
+                color: rgb(6, 118, 216);
+                /* Blue text on hover */
+            }
+        }
+
+
+        /* ------- */
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #6c757d;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer a:hover {
+            color: #007bff;
+        }
+
+        .footer .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: #007bff;
+        }
+
+
+        /* ---- */
+
+        .disclaimer {
+            color: #6c757d;
+            /* Gray text color */
+            font-size: 1rem;
+            /* Regular font size */
+            line-height: 1.5;
+            /* Line height for readability */
+            margin: 20px;
+            /* Margin from the top */
+            margin-bottom: 40px;
+            /* Margin from the top */
+
+        }
+
+        .disclaimer-border {
+            border-top: 1px solid #007bff;
+            /* Blue border on top */
+            padding-top: 15px;
+            /* Padding from the border */
+        }
+    </style>
+
+
+
+    <style>
+        /* -----   BEGIN: General HTML  ---------  */
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 2rem auto;
+        }
+
+
+        div {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            vertical-align: top;
+            padding: 1rem;
+        }
+
+
+
+
+        /* -----   END: General HTML  ---------  */
+
+
+        /* ----- [1] BEGIN: top-blurb ---------  */
+
+        .left-content {
+            width: 30%;
+        }
+
+        .left-content img {
+
+            max-height: 12rems;
+
+        }
+
+        .right-content {
+            width: 70%;
+            text-align: left;
+        }
+
+
+        .right-content p {
+            font-size: 2rem;
+            font-weight: bold;
+
+        }
+
+        /* -----  END: top-blurb ---------  */
+
+
+
+        /* ----- [2] BEGIN: feature list ---------  */
+        /* This is the css for the feature list along with the bullet points */
+
+
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist li i {
+            color: #56C0FF;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .checklist li span {
+            font-size: 1.125rem;
+        }
+
+
+        /* -----  END: feature list ---------  */
+
+        /* -----  BEGIN: [3] Go to mp button ---------  */
+
+        #div_goto_mp_button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            background-color: rgb(6, 118, 216);
+            color: white;
+            font-size: 1.125rem;
+            padding: 0.75rem 2.5rem;
+            border: none;
+            border-radius: 2rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* -----  END: go to mp button ---------  */
+
+        /* -----  BEGIN: [4] FAD button ---------  */
+        .full-width-button {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .btn-rect {
+            background-color: rgb(6, 118, 216);
+            color: white;
+            font-size: 1.25rem;
+            padding: 1rem;
+            border: none;
+            width: 100%;
+            height: 4rem;
+            /* Full width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-rect i {
+            margin-right: 0.5rem;
+            /* Spacing between the icon and text */
+        }
+
+        .btn-rect:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-rect-fsc img {
+            transition: all 0.3s ease;
+        }
+
+        .btn-rect-fsc:hover img {
+            content: url('./images/fsc_ico_hover.png');
+            /* Replace with your hover image path */
+        }
+
+
+
+        /* -----  END:FAD button ---------  */
+
+
+
+
+        /* -----  BEGIN: [5] FAD text  ---------  */
+
+        .find-doctor-section {
+            background-color: #56C0FF;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .find-doctor-section a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+        }
+
+        /* -----  END:FAD text  ---------  */
+
+        /* -----  BEGIN: [6] Search_container ---------  */
+
+
+        .search_container {
+            display: flex;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            height: 8rem;
+        }
+
+        .search_container img {
+            width: 6rem;
+            height: auto;
+            margin-right: 1.5rem;
+        }
+
+        .search_container p {
+            margin: 0;
+            font-size: 1.125rem;
+            font-weight: bold;
+        }
+
+        /* -----  END:Search_container ---------  */
+
+
+        /* -----  BEGIN: [7] copay text ---------  */
+
+        .copay_resource_list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .copay_resource_list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .copay_resource_list li::before {
+            content: "";
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            background-color: #3cc406;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .copay_resource_list a {
+            text-decoration: underline;
+            color: black;
+            font-size: 1.125rem;
+        }
+
+        .copay_resource_list a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* -----  END:copay text ---------  */
+
+
+
+
+        /* ----- MEDIA  :   ---------  */
+
+        @media (max-width: 768px) {
+
+            table,
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            /* -----  BEGIN: top-blurb ---------  */
+
+            .left-content-top-blurb,
+            .right-content-top-blurb {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* -----  END: top-blurb ---------  */
+
+            /* -----  BEGIN: feature list ---------  */
+            .features_list {
+                text-align: left;
+            }
+
+            /* -----  END: feature list ---------  */
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BEGIN: DIV header  -->
+    <div class="header ">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light custom-nav  d-block  d-md-none">
+            <!-- Your mobile-only navigation menu -->
+            <div class="container-fluid">
+                <!-- Hamburger menu -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Logo -->
+                <a class="navbar-brand ms-2" href="#">
+                    <img src="logo.jpg" alt="Logo" width="215" height="57">
+                </a>
+
+                <!-- Menu links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#" target="_blank">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/"
+                                target="_blank">HEALTH FUND</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://training2.32bjfunds.org/"
+                                target="_blank">TRAINING FUND</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://pension.32bjfunds.org/"
+                                target="_blank">PENSION FUND</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://pension.32bjfunds.org/en-us/srsp.aspx"
+                                target="_blank">RETIREMENT SAVINGS (401K)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://legal.32bjfunds.org/"
+                                target="_blank">LEGAL FUND</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://health.32bjfunds.org/en-us/5starcenters.aspx" target="_blank">5 STAR
+                                CENTERS</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://health.32bjfunds.org/en-us/5starwellness.aspx" target="_blank">5 STAR
+                                WELLNESS</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://health.32bjfunds.org/en-us/32bjpartners.aspx" target="_blank">32BJ
+                                PARTNERS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/en-us/glossary.aspx"
+                                target="_blank">GLOSSARY</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/en-us/faq.aspx"
+                                target="_blank">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://health.32bjfunds.org/en-us/contactus.aspx" target="_blank">CONTACT US</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#" target="_blank">SEARCH DOCS</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- BEGIN:  Top gray menu only visible on desktop -->
+        <div class="container d-none d-md-block   ">
+            <!-- Your desktop-only navigation menu -->
+            <div class="top_gray_menu">
+                <table>
+                    <tr>
+                        <td>
+                            <a class="top_gray_menu_nav_link" href="#">HOME &gt; </a> </a><a
+                                href="https://health.32bjfunds.org/" target="_blank">HEALTH FUND &gt;</a>
+                            <a href="https://training2.32bjfunds.org/" target="_blank">TRAINING FUND &gt;</a> <a
+                                href="https://pension.32bjfunds.org" target="_blank">PENSION FUND &gt; </a>
+                            <a href="https://pension.32bjfunds.org/en-us/srsp.aspx" target="_blank">RETIREMENT SAVINGS
+                                (401K) &gt;</a> <a href="https://legal.32bjfunds.org/" target="_blank">LEGAL FUND
+                                &gt;</a>
+                            <a href="#">ENGLISH </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END:  Top gray menu only visible on desktop -->
+
+            <!-- BEGIN:  Top blue menu only visible on desktop -->
+            <div style="align-items: center;" class="top_blue_menu">
+                <table>
+                    <td>
+                        <a href="https://health.32bjfunds.org/en-us/5starcenters.aspx">5 STAR CENTERS</a>
+                        <a href="https://health.32bjfunds.org/en-us/5starwellness.aspx">5 STAR WELLNESS</a>
+                        <a href="https://health.32bjfunds.org/en-us/32bjpartners.aspx">32BJ PARTNERS</a>
+                        <a href="https://health.32bjfunds.org/en-us/glossary.aspx">GLOSSARY</a>
+                        <a href="https://health.32bjfunds.org/en-us/faq.aspx">FAQ</a>
+                        <a href="https://health.32bjfunds.org/en-us/contactus.aspx">CONTACT US</a>
+                        <a href="#">SEARCH DOCS</a>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END:  Top blue menu only visible on desktop -->
+        </div>
+        <!-- END: DIV header  -->
+
+        <!-- BEGIN: DIV container  -->
+        <div class="container">
+            <!-- BEGIN: LAND_01: top blurb   -->
+            <div>
+                <table>
+                    <tr>
+                        <td class="left-content">
+                            <img src="./images/man_at_computer.png" alt="Man at computer">
+                            <!-- Replace with your image path -->
+                        </td>
+                        <td class="right-content">
+                            <p>Discover an enhanced Find-a-Doctor experience on your 32BJ Member Portal by registering
+                                or
+                                logging in today. Click the button below to use features like:</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END: LAND_01: top blurb   -->
+
+            <!-- BEGIN: LAND_02: features_list  -->
+            <div id="div_features_list">
+
+                <ul class="checklist">
+                    <li><i class="fas fa-check-circle"></i><span>Seeing copays that match your health plan</span></li>
+                    <li><i class="fas fa-check-circle"></i><span>Saving your Favorite providers for easy access</span>
+                    </li>
+                    <li><i class="fas fa-check-circle"></i><span>Sending Provider information directly to your phone or
+                            email</span></li>
+                </ul>
+            </div>
+            <!-- END: LAND_02: features_list  -->
+
+            <!-- BEGIN: LAND_03: Goto_mp_button  -->
+            <div id="div_goto_mp_button">
+                <a href="https://www.32bjmemberportal.org/" target="_blank" class="btn-primary">Go To Member Portal</a>
+            </div>
+            <!-- END: LAND_03: Goto_mp_button  -->
+
+            <table>
+                <tr>
+                    <td class="col-12 col-md-6">
+                        <!-- BEGIN: LAND_04: FAD_button  -->
+                        <div class="full-width-button">
+                            <a href="#" class="btn-rect">
+                                <i class="fas fa-stethoscope"></i> <!-- Stethoscope Icon -->
+                                Find a Doctor <br />
+                            </a>
+                        </div>
+                        <!-- END: LAND_04: FAD_button  -->
+
+                        <!-- BEGIN: LAND_05: FAD text  -->
+                        <div class="search_container">
+                            <img src="./images/stetho.png" alt="Stethoscope Icon">
+                            <h4><b>Search for a Doctor or Facility. Use our search tool to find a Doctor that is in the
+                                    32BJ
+                                    Network
+                                    !*</b></h4>
+                        </div>
+                        <!-- END:  LAND_05: FAD text  -->
+
+                        <!-- BEGIN:  LAND_06: Copay resource list   -->
+                        <div>
+                            <h1>Copay and plan resource</h1>
+                            <ul class="copay_resource_list">
+                                <li><a href="https://health.32bjfunds.org/en-us/mentalhealth.aspx"
+                                        target="_blank">Behavioral (Mental)
+                                        Health and Substance</a></li>
+                                <li><a href="#zzz" target="_blank">Abuse Benefits for 32BJ Members and Families</a></li>
+                                <li><a href="https://health.32bjfunds.org/portals/1/Images/COE/coebroc.pdf"
+                                        target="_blank">COE
+                                        Brochure</a></li>
+                                <li><a href="https://www.32bjmaternity.org/" target="_blank">Maternity Program</a></li>
+                                <li><a href="https://health.32bjfunds.org/en-us/Progyny.aspx" target="_blank">Progyny
+                                        Benefit
+                                        Overview</a></li>
+                                <li><a href="https://health.32bjfunds.org/en-us/32bjpartners/MSK.aspx"
+                                        target="_blank">MSK
+                                        Direct
+                                        Brochure</a></li>
+                            </ul>
+                        </div>
+                        <!-- END:  LAND_06: Copay resource list   -->
+
+
+
+                    </td>
+                    <td class="col-12 col-md-6">
+                        <!-- BEGIN:  LAND_07: Find a 5 star center button  -->
+                        <div class="full-width-button">
+                            <a href="#" class="btn-rect btn-rect-fsc">
+                                <img src="./images/fsc_ico.png">
+                                Find a 5 Star Center
+                            </a>
+                        </div>
+                        <!-- END:  LAND_07: Find a 5 star center button  --		 
+		 
+                    <!-- BEGIN:  LAND_08: FSC text  -->
+                        <div class="search_container">
+                            <img src="./images/FSC.png" alt="Five Star Center">
+                            <h4><b>Find a Five Star Center</b></h4>
+                        </div>
+                        <!-- END:  LAND_08:FSC text  -->
+
+                        <!-- BEGIN:  LAND_09: FSC resource list   -->
+                        <div>
+                            <h1>5 Star Center Resources</h1>
+                            <ul class="copay_resource_list">
+                                <li><a href="https://health.32bjfunds.org/5StarCenterMap.aspx" target="_blank">5 Star
+                                        Center
+                                        Maps
+                                        (PDF)</a></li>
+                                <li><a href="https://www.google.com/maps/d/viewer?mid=zL-vyPElIs2U.k6YiIkzqSwlo"
+                                        target="_blank">5 Star
+                                        Center Interactive Google Maps</a></li>
+                                <li><a href="https://health.32bjfunds.org/5StarCenterBrochure.aspx" target="_blank">5
+                                        Star
+                                        Center
+                                        Brochure</a></li>
+                            </ul>
+                        </div>
+                        <!-- END:  LAND_09:FSC resource list   -->
+
+                    </td>
+                </tr>
+            </table>
+
+
+
+
+
+
+        </div>
+        <!-- END: DIV container  -->
+
+        <!-- BEGIN: Disclaimer section  -->
+        <div class="disclaimer disclaimer-border">
+            <p>
+                This tool is intended to provide general information only. Please note that your plan may not cover some
+                of
+                the providers listed in this search tool. For more information on copays and providers specific to you,
+                please register with the 32BJ Member Portal or contact Member Services directly at 800-551-3225,
+                Monday–Friday, 8:30 am–8 pm, and Saturday, 9 am–5 pm.
+            </p>
+            <p>
+                5 Star Centers may not be available in parts of Pennsylvania or in the Washington, DC, area. If you have
+                a
+                Kaiser Permanente plan, visit <a href="https://www.kaiserpermanente.org"
+                    target="_blank">www.kaiserpermanente.org</a>.
+            </p>
+            <p>
+                Utilization of this tool and provider cost information in this directory is not, nor is it intended to
+                be, a
+                substitute for the public directory and provider cost inquiry process required under the No Surprises
+                Act.
+                For the public directory and provider cost inquiry tool required under the No Surprises Act, please
+                visit <a href="https://www.anthem.com" target="_blank">www.anthem.com</a>.
+            </p>
+            <p>
+                The information on this website is solely intended for use by the eligible members of the 32BJ Health
+                Fund
+                and their dependents. The Health Fund goes to great lengths to ensure the information on this site is
+                accurate; however, when making an appointment with a healthcare provider, you should confirm with the
+                provider before you receive treatment that they are currently a participating provider with Anthem Blue
+                Cross and Blue Shield and in your plan. The information on this site is updated at least every ten (10)
+                days. Hospital affiliation displayed on this page doesn't indicate that the hospital is in network for
+                your
+                plan.
+            </p>
+        </div>
+        <!-- END: Disclaimer section  -->
+
+        <!-- BEGIN Footer Section -->
+        <footer class="footer">
+            <div class="container">
+                <!-- Address and Phone -->
+                <div class="mb-3">
+                    <p><i class="fas fa-map-marker-alt"></i> 25 West 18th Street, New York, NY 10011-4676</p>
+                    <p><i class="fas fa-phone"></i> 800-551-3225</p>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="social-icons mb-3">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <!-- Footer Links -->
+                <div>
+                    <a href="#">Terms of Use</a>
+                    <span>|</span>
+                    <a href="#">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </footer>
+        <!-- END Footer Section -->
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>
