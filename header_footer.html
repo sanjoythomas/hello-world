@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Webpage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .navbar-light {
+            background-color: #f8f9fa;
+        }
+
+
+ /* Custom styles for the menu */
+ .custom-nav {
+            background-color: white; /* Blue color for the background */
+        }
+
+        .custom-nav .nav-link {
+            color: white; /* White text color for the links */
+            font-weight: bold;
+        }
+
+        /* Hover effect */
+        .custom-nav .nav-link:hover {
+            background-color: white; /* Change background to white */
+            color: #007bff; /* Change text color to blue */
+        }
+
+/* ----- */
+
+        /* Default styles for larger screens (horizontal display) */
+        .custom-nav .nav-link {
+            background-color: white; /* White background for horizontal display */
+            color: #007bff; /* Blue text color */
+            font-weight: bold;
+        }
+
+        .custom-nav .nav-link:hover {
+            background-color: #007bff; /* Blue background on hover */
+            color: white; /* White text on hover */
+        }
+
+/*  ------ */
+    /* Styles for smaller screens (collapsed menu with vertical display) */
+    @media (max-width: 991.98px) { /* Bootstrap's breakpoint for navbar collapse */
+
+    .navbar-brand {
+                margin-left: auto; /*  logo is centered when the menu is collapsed    */
+                margin-right: auto;
+            }
+
+            .navbar-nav {
+                background-color: #007bff; /* Blue background for vertical menu */
+            }
+
+            .custom-nav {
+                background-color: white; /* Blue background for the navbar */
+            }
+
+            .custom-nav .nav-link {
+                background-color: #007bff; /* Blue background for vertical menu */
+                color: white; /* White text color for vertical menu */
+
+                font-weight: bold;
+            border-radius: 5px; /* Rounded corners */
+            margin: 0px; /* Space between the menu items */
+            padding: 10px 20px; /* Padding to make the items look like buttons */
+
+            }
+
+            .custom-nav .nav-link:hover {
+                background-color: white; /* White background on hover */
+                color: #007bff; /* Blue text on hover */
+            }
+        }
+
+
+/* ------- */
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #6c757d;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer a:hover {
+            color: #007bff;
+        }
+
+        .footer .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: #007bff;
+        }
+    
+
+/* ---- */
+
+.disclaimer {
+            color: #6c757d; /* Gray text color */
+            font-size: 1rem; /* Regular font size */
+            line-height: 1.5; /* Line height for readability */
+            margin: 20px; /* Margin from the top */
+            margin-bottom: 40px; /* Margin from the top */
+            
+        }
+
+        .disclaimer-border {
+            border-top: 1px solid #007bff; /* Blue border on top */
+            padding-top: 15px; /* Padding from the border */
+        }
+
+/* ------ */
+.lorem{
+    font-size: 1rem; /* Regular font size */
+            line-height: 2.5; /* Line height for readability */
+            color: #212529; /* Text color */
+            margin:1rem;
+            font-weight: bold;
+
+
+}
+
+
+/*  ------ */
+
+    </style>
+    
+
+
+
+
+
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light custom-nav">
+        <div class="container-fluid">
+            <!-- Hamburger menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Logo -->
+            <a class="navbar-brand ms-2" href="#">
+                <img src="logo.jpg" alt="Logo" width="215" height="57">
+            </a>
+            <!-- Menu links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#" target="_blank">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/" target="_blank">HEALTH FUND</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://training2.32bjfunds.org/" target="_blank">TRAINING FUND</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://pension.32bjfunds.org/" target="_blank">PENSION FUND</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://pension.32bjfunds.org/en-us/srsp.aspx" target="_blank">RETIREMENT SAVINGS (401K)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://legal.32bjfunds.org/" target="_blank">LEGAL FUND</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/en-us/5starcenters.aspx" target="_blank">5 STAR CENTERS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/en-us/5starwellness.aspx" target="_blank">5 STAR WELLNESS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/en-us/32bjpartners.aspx" target="_blank">32BJ PARTNERS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/en-us/glossary.aspx" target="_blank">GLOSSARY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/en-us/faq.aspx" target="_blank">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://health.32bjfunds.org/en-us/contactus.aspx" target="_blank">CONTACT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" target="_blank">SEARCH DOCS</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="lorem">
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac ultricies lectus, ac pretium urna. Ut nec orci sapien. Nam eget sodales est. Donec convallis nibh in erat fringilla, ut interdum velit ornare. Maecenas et turpis semper, bibendum dolor eget, pellentesque massa. Quisque non nisi et lorem mattis vehicula. Mauris interdum volutpat erat, et efficitur massa varius quis.
+</p><p>
+Suspendisse at placerat erat. Nullam a hendrerit justo. Curabitur auctor, tellus nec faucibus aliquet, quam diam vestibulum metus, et ultrices felis turpis in sapien. Proin consequat nulla at metus auctor, eu tempor eros dapibus. Vivamus a cursus dui. Praesent pellentesque porttitor laoreet. Vivamus a suscipit ex. Fusce venenatis suscipit magna.
+</p><p>
+
+Fusce sed justo velit. Maecenas at tempus ante, eu lacinia ipsum. Nullam interdum sodales ex, ut venenatis risus ultrices eu. Donec id fermentum nisl. Donec rutrum cursus mattis. Maecenas vitae ultrices metus. Mauris pharetra tempus nisi at accumsan. Vivamus massa eros, mattis quis eros eget, condimentum suscipit urna. Suspendisse potenti.
+</p><p>
+
+Fusce in turpis laoreet, eleifend purus vel, feugiat lacus. Curabitur ac orci nisi. Phasellus lobortis, nibh at accumsan suscipit, ex risus pretium metus, finibus auctor tellus ligula sed neque. Morbi id dolor a lectus fermentum bibendum. Duis urna neque, maximus sed aliquam non, egestas sit amet erat. Fusce iaculis leo fermentum tempor sagittis. In accumsan, quam vel iaculis vestibulum, erat odio porta ante, ut facilisis velit est vitae leo. Nunc quis odio libero. Aliquam erat volutpat. Sed lectus neque, pellentesque quis interdum vel, gravida ut tellus. Nulla blandit viverra mi. Duis eu sem nunc. Praesent eleifend finibus lorem, vel molestie magna fermentum in. Aenean porta purus mauris, sed eleifend nunc porttitor eget. Suspendisse et dictum tortor. Praesent vitae elementum velit, eget scelerisque diam.
+</p><p>
+
+In a lectus in leo finibus facilisis. Quisque consectetur commodo mi, a volutpat nunc pretium quis. Sed volutpat quam mauris, et blandit sem eleifend sed. Nunc in vestibulum eros. Sed bibendum sem libero, id efficitur erat volutpat luctus. Mauris ullamcorper felis quis justo malesuada, a tincidunt felis cursus. Suspendisse vel elit dignissim, finibus tellus ac, consequat massa. In efficitur purus sit amet augue eleifend auctor ac a nisi. Pellentesque non lectus purus.
+</p>
+
+  </div>
+
+
+
+
+
+    <div class="disclaimer disclaimer-border">
+        <p>
+            This tool is intended to provide general information only. Please note that your plan may not cover some of the providers listed in this search tool. For more information on copays and providers specific to you, please register with the 32BJ Member Portal or contact Member Services directly at 800-551-3225, Monday–Friday, 8:30 am–8 pm, and Saturday, 9 am–5 pm.
+        </p>
+     
+        <p>
+            5 Star Centers may not be available in parts of Pennsylvania or in the Washington, DC, area. If you have a Kaiser Permanente plan, visit <a href="https://www.kaiserpermanente.org" target="_blank">www.kaiserpermanente.org</a>.
+        </p>
+        <p>
+            Utilization of this tool and provider cost information in this directory is not, nor is it intended to be, a substitute for the public directory and provider cost inquiry process required under the No Surprises Act. For the public directory and provider cost inquiry tool required under the No Surprises Act, please visit <a href="https://www.anthem.com" target="_blank">www.anthem.com</a>.
+        </p>
+
+
+        <p>
+            The information on this website is solely intended for use by the eligible members of the 32BJ Health Fund and their dependents. The Health Fund goes to great lengths to ensure the information on this site is accurate; however, when making an appointment with a healthcare provider, you should confirm with the provider before you receive treatment that they are currently a participating provider with Anthem Blue Cross and Blue Shield and in your plan. The information on this site is updated at least every ten (10) days. Hospital affiliation displayed on this page doesn't indicate that the hospital is in network for your plan.
+        </p>
+
+
+    </div>
+
+ <!-- Footer -->
+ <footer class="footer">
+    <div class="container">
+
+
+   
+
+
+
+
+        <!-- Address and Phone -->
+        <div class="mb-3">
+            <p><i class="fas fa-map-marker-alt"></i> 25 West 18th Street, New York, NY 10011-4676</p>
+            <p><i class="fas fa-phone"></i> 800-551-3225</p>
+        </div>
+        <!-- Social Media Icons -->
+        <div class="social-icons mb-3">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <!-- Footer Links -->
+        <div>
+            <a href="#">Terms of Use</a>
+            <span>|</span>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Disclaimer</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+</html>
